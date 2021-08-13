@@ -37,8 +37,8 @@ function getItems(ids) {
   return ids.map(getItem)
 }
 
-function filterJobsOut(items){
-  return items.filter((item) => item.type !== "job")
+function filterStories(items){
+  return items.filter((item) => item.type === "story" && !item.deleted && !item.dead)
 } 
 
 export default function getStories(storyType) {
@@ -47,7 +47,7 @@ export default function getStories(storyType) {
     (getItems(storyIds))
   )
   .then((storyItems) => Promise.all(storyItems))
-  .then((storyItems) => filterJobsOut(storyItems))
+  .then((storyItems) => filterStories(storyItems))
 
 }
 
@@ -73,12 +73,6 @@ export function getUser(username){
       }
     },
   )
-}
-
-function filterStories(userSubmissions){
-   console.log(userSubmissions)
-   return userSubmissions.filter((userSubmission) => (userSubmission.type === 'story' && userSubmission.deleted !== true && userSubmission.dead !== true))
-    
 }
 
 
