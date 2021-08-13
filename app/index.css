@@ -153,6 +153,10 @@ li {
   font-weight: 425;
 }
 
+.commenter-detail-dark a {
+  color: #dadada;
+}
+
 .commenter-detail-light {
   color: rgb(128, 128, 135);
   font-size: 15px;
