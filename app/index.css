@@ -151,8 +151,6 @@ li {
   color: #dadada;
   font-size: 15px;
   font-weight: 425;
-  display: flex;
-  justify-content: center;
 }
 
 .commenter-detail-dark a {
